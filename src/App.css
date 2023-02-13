@@ -1,32 +1,126 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+ 
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home,
+.team,
+.sign-up {
   display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.team {
+  background-image: url('../public/images/img-2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+ 
+
+.sign-up {
+  background-image: url('../public/images/img-8.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+/* About Danielle formatting */
+
+.danielle {
+  background-color: #141414;
+  display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.danielle_about_container {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  box-shadow: 10px 10px 10px white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.danielle_introduction {
+  background-color: #fff;
+  margin-bottom: 50px;
+  width: 75%;
+}
+
+.danielle_introduction >h2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 0px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem 20%;
   }
-  to {
-    transform: rotate(360deg);
+
+.danielle_about_body {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 0px;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+}
+
+.danielle_about_body >p {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 0px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem 20%;
   }
+
+.danielle_profile {
+border-radius: 50%;
+box-shadow: 10px 10px 10px black;
+height: 200px;
+}
+
+/* blog formatting */
+
+.blog {
+background-color: #141414;
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+}
+
+.blog_title >h1 {
+font-size: 50px;
+background-color: #141414;
+color: white;
+}
+
+.powr-rss-feed {
+background-color: #141414;
 }

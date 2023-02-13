@@ -1,50 +1,30 @@
-import React, { Component } from "react"
-import logo from "./logo.svg"
-import "./App.css"
+import React from 'react';
+import Navbar from './Components/Navbar';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+import Home from './Components/pages/Home';
+import Danielle from './Components/pages/Danielle';
+import Team from './Components/pages/Team';
+import Contact from './Components/pages/Contact';
+import Footer from './Components/Footer';
+import Blog from './Components/pages/Blog';
 
-class LambdaDemo extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { loading: false, msg: null }
-  }
-
-  handleClick = api => e => {
-    e.preventDefault()
-
-    this.setState({ loading: true })
-    fetch("/.netlify/functions/" + api)
-      .then(response => response.json())
-      .then(json => this.setState({ loading: false, msg: json.msg }))
-  }
-
-  render() {
-    const { loading, msg } = this.state
-
-    return (
-      <p>
-        <button onClick={this.handleClick("hello")}>{loading ? "Loading..." : "Call Lambda"}</button>
-        <button onClick={this.handleClick("async-dadjoke")}>{loading ? "Loading..." : "Call Async Lambda"}</button>
-        <br />
-        <span>{msg}</span>
-      </p>
-    )
-  }
+function App() {
+  return (
+    <>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path='/' exact element={<Home />} />
+          <Route path='/team' element={<Team />} />
+          <Route path='/Blog' element={<Blog />} />
+          <Route path='/danielle' element={<Danielle />} />
+          <Route path='/contact' element={<Contact />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </>
+  );
 }
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <LambdaDemo />
-        </header>
-      </div>
-    )
-  }
-}
-
-export default App
+export default App;
